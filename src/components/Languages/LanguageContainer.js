@@ -23,12 +23,12 @@ class LanguageContainer extends Component {
   render() {
     //setting data of languages as props for CourseContainer
     // let languageList = LanguageList.javascript; Changed this bellow passed the route to data as props
-    let languageList = this.props.route.data;
+    let languageList = this.props.route.server;
     let languages = languageList.map((language) => {
-      return <Language title={this.state.language.title}
-                     desc={this.state.language.description}
-                     img={this.state.language.img_src}
-                     key={this.state.language.id} />
+      return <Language title={language.title}
+                     desc={language.description}
+                     img={language.img_src}
+                     key={language.id} />
     });
     return (
       <div>
