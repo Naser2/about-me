@@ -13,7 +13,7 @@ import About from './components/About';
 import Languages from './components/Languages';
 import Projects from './components/Projects';
 import NotFound from './components/NotFound';
-import LanguageContainer from './components/languages/LanguageContainer';
+// import LanguageContainer from './components/languages/LanguageContainer';
 import LanguageList from './server/languages';
 import Featured from './components/Featured';
 
@@ -26,9 +26,9 @@ const routes = (
       <Route path="projects" component={Projects} />
       <Route path="languages" component={Languages}>
         <IndexRedirect to="javascript" />
-        <Route path="html" component={LanguageContainer} server={LanguageList.HTML} />
+        {/* <Route path="html" component={LanguageContainer} server={LanguageList.HTML} />
         <Route path="css" component={LanguageContainer} server={LanguageList.CSS} />
-        <Route path="javascript" component={LanguageContainer} server={LanguageList.JS} />
+        <Route path="javascript" component={LanguageContainer} server={LanguageList.JS} /> */}
       </Route>
       <Route path="featured/:topic/:subject" component={Featured} />
       <Route path="*" component={NotFound} />
