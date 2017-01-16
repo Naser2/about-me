@@ -1,24 +1,17 @@
+const express = require('express');
 
-var express = require('express');
-var app     = express();
+const app = express();
 
-app.set('port', (process.env.PORT || 8080));
-
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
+if (!process.env.PORT) {
+require('dotenv').config();
+}
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'weeee'});
 });
 
-
-// Test
-// var express = require('express');
-// var app = express();
-//
 // app.use(express.static(__dirname + '/'));
-//
-// app.listen(process.env.PORT || 8080), function() {
-//   console.log('listening on *:8080');
-// });
+
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`Runing on port ${port}`);
+});
