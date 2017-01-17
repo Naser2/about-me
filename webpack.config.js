@@ -1,6 +1,6 @@
 
 module.exports = {
-  entry: './src/index2.js',
+  entry: './src/index.js',
 
   output: {
     path: './dist',
@@ -17,14 +17,7 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.svg\?fill=/, // match only imports like `url(image.svg?fill=red)`
-        loaders: [
-          'url', // or file-loader
-          'svg-fill?selector=path,circle'
-		]
-	},
+      }
     ]
   },
   devServer: {
