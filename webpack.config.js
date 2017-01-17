@@ -17,7 +17,14 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
-      }
+      },
+      {
+        test: /\.svg\?fill=/, // match only imports like `url(image.svg?fill=red)`
+        loaders: [
+          'url', // or file-loader
+          'svg-fill?selector=path,circle'
+		]
+	},
     ]
   },
   devServer: {
