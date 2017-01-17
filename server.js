@@ -5,7 +5,7 @@ const app = express();
 if (!process.env.PORT) {
 require('dotenv').config();
 }
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.status(200).json({ message: 'weeee'});
 });
 
