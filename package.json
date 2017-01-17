@@ -6,12 +6,19 @@
   "scripts": {
     "engines": {
       "node": "6.2.0",
-      "npm": "3.10.8"
+      "npm": "3.10.8",
+        "start": "node server.js"
     },
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server --progress --inline --hot --history-api-fallback"
   },
+
+  "repository": {
+    "type":"git",
+    "url":"https://git.heroku.com/about-nas.git"
+  },
+
   "keywords": [],
   "author": "@nas",
   "license": "ISC",
