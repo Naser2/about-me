@@ -1,17 +1,14 @@
 const express = require('express');
-
+const path = require('path');
+const port = process.env.PORT || 8080;
 const app = express();
 
-if (!process.env.PORT) {
-require('dotenv').config();
-}
-app.get('/', (req, res) => {
-  res.status(200).json({ message: 'weeee'});
+app.use(express.static(__dirname));
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-// app.use(express.static(__dirname + '/'));
-
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Runing on port ${port}`);
-});
+app.listen(port);
+  console.log('Server Started');
